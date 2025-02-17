@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+    <h1>表單填寫</h1>
+<form action="" method="post">
+    <label for="name">姓名:</label>
+    <input type="text" id="name" name="name" placeholder="輸入姓名"> <br>
+    <label for="password">密碼:</label>
+    <input type="password" id="password" name="password" placeholder="輸入密碼"><br>
+    <label for="birthday">生日:</label>
+    <input type="date" id="birthday" name="birthday"><br>
+
+    <p>選擇性別:</p>
+    <input type="radio" id="male" name="gender" value="male">
+    <label for="male">男</label><br>
+    <input type="radio" id="female" name="gender" value="female">
+    <label for="female">女</label><br>
+
+    <p>選擇擅長程式語言:</p>
+    <input type="checkbox" id="html" name="language" value="html">
+    <label for="html">HTML</label><br>
+    <input type="checkbox" id="css" name="language" value="css">
+    <label for="css">CSS</label><br>
+    <input type="checkbox" id="javascript" name="language" value="javascript">
+    <label for="javascript">Javascript</label><br>
+    <input type="checkbox" id="c/c++" name="language" value="c/c++">
+    <label for="c/c++">C/C++</label><br>
+    <input type="checkbox" id="python" name="language" value="python">
+    <label for="python">Python</label><br>
+    <input type="checkbox" id="java" name="language" value="java">
+    <label for="java">Java</label><br>
+
+    <p>就讀年級:</p>
+    <select name="grade">
+        <option value="one">大一</option>
+        <option value="two">大二</option>
+        <option value="three">大三</option>
+        <option value="four">大四</option>
+    </select><br><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" placeholder="輸入Email"><br><br>
+
+
+    <p>備註:</p>
+    <textarea id="note" name="note" placeholder="輸入備註"></textarea><br>
+    
+    <label for="photo">上傳頭像圖片：</label>
+    <input type="file" id="photo" name="photo" accept="image/*"><br>
+
+    <input type="submit" value="submit">
+</form>
+   
+</body>
+</html>
+
