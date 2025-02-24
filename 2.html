@@ -3,50 +3,78 @@
 <head>
     <style>
         body {
-            background: linear-gradient(0deg, rgb(71,78,166) 0%, rgb(16,11,25) 100%);
+            background: linear-gradient(0deg, rgb(71, 78, 166) 0%, rgb(16, 11, 25) 100%);
             min-height: 100vh;
+            margin: 0;
+            padding: 0;
         }
         h1 {
             color: white;
             text-align: center;
-            text-shadow: 1px 2px 0 rgb(243, 74, 178),-1px -2px 0 rgb(8, 179, 252)
+            text-shadow: 2px 3px 0 rgb(243, 74, 178), -2px -3px 0 rgb(8, 179, 252);
+            font-size: 2.5em;
+            margin-top: 20px;
         }
         h2 {
             color: rgb(14, 5, 79);
         }
+        h3, h4, p ,pre{
+            
+            color: white;
+        }
         h3 {
-            color: white;
-        }
-        h4 {
-            color: white;
-        }
-        p {
-            color: white;
-        }
-        picture {
-        max-width: 300px;
-        max-height: 200px;
-        width: auto;
-        height: auto;
+    display: inline-block;
+}
+
+h3:hover {
+    background: linear-gradient(0deg, rgba(98, 255, 221, 0.664) 0%, rgba(16, 11, 25, 0) 100%);
+    border-bottom: 1px solid rgb(0, 255, 221);
+    padding-bottom: 1px; /* 補償邊框的高度 */
+}
+        h3:hover {
+            background: linear-gradient(0deg, rgba(98, 255, 221, 0.664) 0%, rgba(16, 11, 25, 0) 70%);
+            border-bottom:1px solid rgb(0, 255, 221);
+            width: fit-content;
+
+
         }
         .a {
             display: flex;
-    width: 100%;
-    margin-bottom: 40px; 
-    padding: 20px;
-    box-sizing: border-box;
+            width: 80%;
+            margin: 40px auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
         }
+        
         .b {
-            float: left;
-            width: 35%;
+            text-align: center;
+            padding: 20px;
+            width: 20%;
+        }
+        .b img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            border: 4px solid rgba(255, 255, 255, 0.5);
         }
         .c {
-            float: right;
-            background-color: rgb(129, 132, 167);
+            background-color: rgba(129, 132, 167, 0.8);
             border-radius: 10px;
-            width: 50%;
-            border: 20px solid rgb(129, 132, 167);
-
+            padding: 20px;
+            width: 70%;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        @media (max-width: 768px) {
+            .a {
+                flex-direction: column;
+                width: 90%;
+            }
+            .b, .c {
+                width: 100%;
+                text-align: center;
+            }
         }
 
         
@@ -56,10 +84,9 @@
     <h1>自我介紹</h1>
 
 <div class="a">
-
     <div class="b">
     <picture>
-        <img src="./long.png">
+        <img src="./long.png"><br>
     </picture>
     <h3>黃柏韶</h3>
     <h4>就讀台中教育大學</h4><br>
@@ -77,22 +104,21 @@
     
     <div class="b">
     <picture>
-        <img src="./short.png">
+        <img src="./short.png"><br>
     </picture>
     <h3>劉禹錫</h3>
     <h4>卒於中國</h4>
     </div>
     <div class="c">
         <h2>陋室銘</h2>
-        <p>山不在高，有仙則名，水不在深，有龍則靈。
-            斯是陋室，唯吾德馨。
-            苔痕上階綠，草色入簾青 。談笑有鴻儒，往來無白丁。可以調素琴，閱金經。
-            無絲竹之亂耳，無案牘之勞形。
-            南陽諸葛廬，西蜀子雲亭。孔子云：「何陋之有?」</p>
+        <pre>山不在高，有仙則名，水不在深，有龍則靈。
+斯是陋室，唯吾德馨。
+苔痕上階綠，草色入簾青 。談笑有鴻儒，往來無白丁。可以調素琴，閱金經。
+無絲竹之亂耳，無案牘之勞形。
+南陽諸葛廬，西蜀子雲亭。孔子云：「何陋之有?」</pre>
     </div>
 </div>
 
    
 </body>
 </html>
-
