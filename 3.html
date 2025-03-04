@@ -16,6 +16,18 @@
             color: #F9EEB6;
             display: inline;
         }
+        .nameen {
+            color: #F9EEB6;
+            display: inline;
+            font-size: 16px;
+        }
+        @media screen and (max-width: 1200px) {
+            .nameen {
+                display: none
+            }
+            
+        }
+        
 
         .inftop {
             color: #87543E
@@ -50,10 +62,9 @@
             background-color: #58829A;
         }
 
-        .foot {
+        .foottxt {
             color: #ffffff;
             font-size: 16px;
-            line-height: 0.3;
 
         }
 
@@ -63,11 +74,15 @@
             display: inline;
         }
 
-        .foottxt {
+        .foottxtbox {
+            display: flex;
+            flex-direction: column;
+        }
+        .bfoottxtbox {
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
-            gap: 10px;
+
         }
 
         .allfoot {
@@ -75,6 +90,7 @@
             align-items: center;
             justify-content: space-between;
             margin: 20px;
+            gap: 10px;
 
 
 
@@ -88,7 +104,7 @@
 
         }
 
-        nav p {
+        nav div {
             font-size: 22px;
             padding: 0px 15px;
             color: #87543E;
@@ -99,16 +115,17 @@
             background-color: #ffffff;
             border: 2px solid #59B1D4;
             border-radius: 20px;
+            
 
         }
 
-        .leftbox p {
-
+        .leftbox div {
+            margin: 5px ;
             font-size: 16px;
             padding: 0px 8px;
         }
 
-        .leftbox p:hover {
+        .leftbox div:hover {
             background-color: #59B1D4;
             color: #ffffff;
         }
@@ -121,7 +138,6 @@
         }
 
         .file {
-            text-align: right;
             display: inline-block;
             size: 16px;
             color: #59B1D4;
@@ -129,31 +145,29 @@
 
         .filename {
             padding: 20px;
-            display: inline;
+            display: inline-block;
             size: 16px;
-            line-height: 4;
 
         }
 
         .filecut {
-            height: 5px;
+            height: 3px;
             background-color: #58829A;
         }
 
         .rl {
-            display: flex;
-            align-items: flex-start;
+            display: grid;
+            grid-template-columns:3fr 7fr;
             gap: 20px;
         }
-
-        .rl>div:first-child {
-            flex: 30%;
+        @media screen and (max-width: 600px) {
+            
+        .rl {
+            display: grid;
+            grid-template-columns:1fr;
+            grid-template-rows: auto auto;
         }
-
-        .rl>div:last-child {
-            flex: 70%;
-        }
-
+}
         .body {
             margin: 0 auto ;
             max-width: 1000px;
@@ -171,103 +185,101 @@
         <div class="back" style="background-color: #ffffff;">
             <div style="display: flex; justify-content: space-between;">
                 <div class="trapezoid">
-                    <p class="name" style="font-size: 20px;">國立臺中教育大學</p>
-                    <pre class="name" style="font-size: 16px;">National Taichung University of Education</pre>
+                    <div class="name" style="font-size: 20px;">國立臺中教育大學</div>
+                    <div class="nameen">National Taichung University of Education</div>
                     <br>
-                    <p class="name" style="font-size: 38px;">資訊工程學系</p>
-                    <pre class="name" style="font-size: 16px;">National Taichung University of Education</pre>
+                    <div class="name" style="font-size: 38px;">資訊工程學系</div>
+                    <div class="nameen">National Taichung University of Education</div>
 
                 </div>
-                <div>
-                    <a style="color: #58829A; white-space: nowrap;">繁體中文 Traditional Chinese | 英文English</a>
-                    <div style="display: flex; align-items: center; gap: 10px;">
+                <div style="display: flex;flex-direction: column; align-items: flex-end;">
+                    <div style="color: #58829A; white-space: nowrap;">繁體中文 Traditional Chinese | 英文English</div>
+                    <div style="display: flex; gap: 10px;">
                         <img class="pic" src=".\picture\3\ntcuCs-183fa630.png">
                         <img class="pic" src=".\picture\3\ntcu-26ab0f69.png">
                         <div class="login"><span style="font-size: 20px;">login</span></div>
-
                     </div>
-
                 </div>
             </div>
         </div>
         <nav>
-            <p>訊息公告</p>
-            <p>系所成員</p>
-            <p>系所介紹</p>
-            <p>招生資訊</p>
-            <p>學生資訊</p>
-            <p>學術研究</p>
-            <p>活動紀錄</p>
-            <p>下載專區</p>
-            <p>獲獎公告</p>
-            <p>實習資訊</p>
+            <div>訊息公告</div>
+            <div>系所成員</div>
+            <div>系所介紹</div>
+            <div>招生資訊</div>
+            <div>學生資訊</div>
+            <div>學術研究</div>
+            <div>活動紀錄</div>
+            <div>下載專區</div>
+            <div>獲獎公告</div>
+            <div>實習資訊</div>
         </nav>
 
 
         <div class="body">
             <div style="padding: 10px px;">
-                <p class="nowloc">首頁</p>
+                <div class="nowloc">首頁</div>
                 <img width="20px" style="display: inline;" src=".\picture\3\v.png">
-                <p class="nowloc">下載專區</p>
+                <div class="nowloc">下載專區</div>
             </div>
             <svg width="auto" height="66">
                 <polygon points="0,0 220,20 264,66 0,66" style="fill:#F2BC9D;"></polygon>
                 <text x="27" y="50" fill="#ffffff" font-size="30px" font-weight="bold">下載專區</text>
             </svg>
             <div class="rl">
-                <div style="background-color: #ffffff;padding: 20px; border-radius: 20px;">
+                <div style="background-color: #ffffff;padding: 20px; border-radius: 20px; height: fit-content;">
                     <div class="leftbox">
-                        <p class="lbtxt">全部</p>
-                        <p class="lbtxt">課務相關</p>
-                        <p class="lbtxt">系徽</p>
-                        <p class="lbtxt">碩士論文</p>
-                        <p class="lbtxt">雙主修</p>
-                        <p class="lbtxt">轉系</p>
-                        <p class="lbtxt">課程先修申請</p>
-                        <p class="lbtxt">學士專題</p>
-                        <p class="lbtxt">實習</p>
-                        <p class="lbtxt">獎學金</p>
+                        <div class="lbtxt">全部</div>
+                        <div class="lbtxt">課務相關</div>
+                        <div class="lbtxt">系徽</div>
+                        <div class="lbtxt">碩士論文</div>
+                        <div class="lbtxt">雙主修</div>
+                        <div class="lbtxt">轉系</div>
+                        <div class="lbtxt">課程先修申請</div>
+                        <div class="lbtxt">學士專題</div>
+                        <div class="lbtxt">實習</div>
+                        <div class="lbtxt">獎學金</div>
                     </div>
                 </div>
 
 
                 <div class="rightbox" style="background-color:#58829A;">
                     <div class="rightbox">
-                        <p class="filename">
-                            資訊專題補助經費預算規劃書</p>
-                        <p class="file">下載｜預覽</p>
+                        <div class="filename">
+                            資訊專題補助經費預算規劃書</div>
+                        <div class="file">下載｜預覽</div>
                         <hr class="filecut">
-                        <p class="filename">
-                            資訊專題補助經費預算規劃書-範例</p>
-                        <p class="file">下載｜預覽</p>
+                        <div class="filename">
+                            資訊專題補助經費預算規劃書-範例</div>
+                        <div class="file">下載｜預覽</div>
                         <hr class="filecut">
-                        <p class="filename">
-                            資訊專題補助經費執行成效報告書</p>
-                        <p class="file">下載｜預覽</p>
+                        <div class="filename">
+                            資訊專題補助經費執行成效報告書</div>
+                        <div class="file">下載｜預覽</div>
                         <hr class="filecut">
-                        <p class="filename">
-                            演講-心得報告表格</p>
-                        <p class="file">下載｜預覽</p>
+                        <div class="filename">
+                            演講-心得報告表格</div>
+                        <div class="file">下載｜預覽</div>
                         <hr class="filecut">
-                        <p class="filename">
-                            畢業專題報告撰寫參考格式</p>
-                        <p class="file">下載｜預覽</p>
+                        <div class="filename">
+                            畢業專題報告撰寫參考格式</div>
+                        <div class="file">下載｜預覽</div>
                         <hr class="filecut">
-                        <p class="filename">
-                            理學院聯合專題成果展手冊-摘要格式</p>
-                        <p class="file">下載｜預覽</p>
+                        <div class="filename">
+                            理學院聯合專題成果展手冊-摘要格式</div>
+                        <div class="file">下載｜預覽</div>
                         <hr class="filecut">
-                        <p class="filename">
-                            理學院聯合專題成果展手冊-摘要範例參考</p>
-                        <p class="file">下載｜預覽</p>
+                        <div class="filename">
+                            理學院聯合專題成果展手冊-摘要範例參考</div>
+                        <div class="file">下載｜預覽</div>
                         <hr class="filecut">
-                        <p class="filename">
-                            中教大資工系 學生實習計畫</p>
-                        <p class="file">下載｜預覽</p>
+                        <div class="filename">
+                            中教大資工系 學生實習計畫</div>
+                        <div class="file">下載｜預覽</div>
                         <hr class="filecut">
-                        <p class="filename">
-                            中教大資工系 實習機構評估表</p>
-                        <p class="file">下載｜預覽</p>
+                        <div class="filename">
+                            中教大資工系 實習機構評估表</div>
+                        <div class="file">下載｜預覽</div>
                     </div>
 
                 </div>
@@ -275,31 +287,31 @@
         </div>
         <footer>
             <div class="allfoot">
-                <img src=".\picture\3\ntcuCs-183fa630.png" height="80">
-                <div class="foottxt">
-                    <div>
-                        <p class="foot">
-                            臺中教育大學 資訊工程學系</p>
-                        <p class="foot">
-                            地址：403514臺中市西區民生路140號</p>
-                        <p class="foot">
-                            Address：No. 140, Minsheng Rd, West District, Taichung City, 403514</p>
+                <img src=".\picture\3\ntcuCs-183fa630.png" height="100vh" >
+                <div class="bfoottxtbox">
+                    <div class="foottxtbox">
+                        <div class="foottxt">
+                            臺中教育大學 資訊工程學系</div>
+                        <div class="foottxt">
+                            地址：403514臺中市西區民生路140號</div>
+                        <div class="foottxt">
+                            Address：No. 140, Minsheng Rd, West District, Taichung City, 403514</div>
                     </div>
-                    <div>
-                        <p class="foot">
-                            辦公室：求真樓2樓 K202</p>
-                        <p class="foot">
-                            傳真：04-22183580</p>
-                        <p class="foot" style="color: #F9EEB6;">
+                    <div class="foottxtbox">
+                        <div class="foottxt">
+                            辦公室：求真樓2樓 K202</div>
+                        <div class="foottxt">
+                            傳真：04-22183580</div>
+                        <div class="foottxt" style="color: #F9EEB6;">
                             電話：04-22183582</a>
-                        <p class="foot" style="color: #F9EEB6;">
+                        <div class="foottxt" style="color: #F9EEB6;">
                             E-mail：cis@mail.ntcu.edu.tw</a>
                     </div>
                 </div>
             </div>
             <hr style="height: 1px; background-color: #9bb7c7; width: 95%; ">
-            <p style="color: #9bb7c7; font-size: 10px; text-align: center; ">
-                Copyright © 2022 National Taichung University of Education, Computer Science All Rights Reserved</p>
+            <div style="color: #9bb7c7; font-size: 10px; text-align: center; ">
+                Copyright © 2022 National Taichung University of Education, Computer Science All Rights Reserved</div>
 
         </footer>
 
