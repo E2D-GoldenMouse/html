@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            
+        }
+
+        .container {
+            position: relative;
+            width: 600px;
+            height: 400px;
+            border: 4px outset #eaeaea;
+            background-color: #000;
+        }
+
+        .box {
+            
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            color: #fff;
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            animation: move 12s infinite linear ,flip 3s infinite linear;
+        }
+        .box1 {
+            opacity: 0.2;
+            border-radius: 50%;
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            animation: move 12s infinite ease-in ;
+            animation-delay: 0.01s;
+        }
+        .box2 {
+            opacity: 0.2;
+            border-radius: 50%;
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            animation: move 12s infinite ease-in ;
+            animation-delay: 0.05s;
+        }
+
+
+        @keyframes move {
+            0% {
+                top: 125px;
+                left: 275px;
+                background-color: #ff22b2;
+            }
+            8% {
+                top: 0px;
+                left: 25px;
+                background-color: #b3ff00;
+            }
+            10% {
+                top: 25px;
+                left: 0px;
+                background-color: #7722ff;
+            }
+            28% {
+                top: 350px;
+                left: 450px;
+                background-color: #ff5722;
+            }
+            34% {
+                top: 200px;
+                left: 550px;
+                background-color: #22daff;
+            }
+            44% {
+                top: 0px;
+                left: 300px;
+                background-color: #22ff2d;
+            }
+            54% {
+                top: 200px;
+                left: 0px;
+                background-color: #ff22ed;
+            }
+            62% {
+                top: 350px;
+                left: 180px;
+                background-color: #4722ff;
+            }
+            74% {
+                top: 100px;
+                left: 550px;
+                background-color: #ff5722;
+            }
+            78% {
+                top: 0px;
+                left: 450px;
+                background-color: #268e42;
+            }
+            99% {
+                top: 350px;
+                left: 0px;
+                background-color: #ffa722;
+            }
+            100% {
+                top: 350px;
+                left: 0px;
+                background-color: #ffa722;
+            }
+        }
+        @keyframes flip {
+    0%, 100% {
+        transform: rotateY(0deg);
+        transform: rotate(0deg);
+    }
+    10% {
+        transform: rotateY(180deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box1"></div>
+        <div class="box2"></div>
+        <div class="box">DVD</div>
+        
+
+    </div>
+</body>
+</html>
