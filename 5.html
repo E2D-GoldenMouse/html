@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>拖動事件示例</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            border-radius: 10px;
+            touch-action: none;
+        }
+        .touch-box {
+            background-color: red;
+        }
+        .touch-box:nth-child(2) {
+            top: 200px;
+        }
+        .mouse-box {
+            background-color: green;
+            top: 330px;
+            cursor: move;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>用手指拖動紅色方塊，用滑鼠拖動綠色方塊</h2>
+    <div class="box touch-box"></div>
+    <div class="box touch-box"></div>
+    <div class="box mouse-box"></div>
+
+    <script>
+        const touchBoxes = document.querySelectorAll('.touch-box');
+        const mouseBox = document.querySelector('.mouse-box');
+
+        touchBoxes.forEach(box => {
+            let offsetX = 0, offsetY = 0;
+
+            box.addEventListener("touchstart", function(event) {
+                let touch = event.touches[0];
+                offsetX = touch.clientX - box.offsetLeft;
+                offsetY = touch.clientY - box.offsetTop;
+                box.style.backgroundColor = "blue";
+            });
+
+            box.addEventListener("touchmove", function(event) {
+                event.preventDefault();
+                let touch = event.touches[0];
+                box.style.left = (touch.clientX - offsetX) + "px";
+                box.style.top = (touch.clientY - offsetY) + "px";
+            });
+
+            box.addEventListener("touchend", function() {
+                box.style.backgroundColor = "red";
+            });
+        });
+
+        let isDragging = false;
+        let startX, startY;
+
+        mouseBox.addEventListener('mousedown', function(e) {
+            isDragging = true;
+            startX = e.clientX - mouseBox.offsetLeft;
+            startY = e.clientY - mouseBox.offsetTop;
+            mouseBox.style.backgroundColor = "purple";
+        });
+
+        document.addEventListener('mousemove', function(e) {
+            if (isDragging) {
+                mouseBox.style.left = (e.clientX - startX) + 'px';
+                mouseBox.style.top = (e.clientY - startY) + 'px';
+            }
+        });
+
+        document.addEventListener('mouseup', function() {
+            isDragging = false;
+            mouseBox.style.backgroundColor = "green";
+        });
+    </script>
+
+</body>
+</html>
